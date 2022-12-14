@@ -1,0 +1,75 @@
+body{
+    font-family: sans-serif;
+    height: 100vh;
+
+    background: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.5));
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 40px;
+    color: #bbb;
+}
+
+span.txtani{
+    /* border-right: 2px solid #747474; */
+
+    animation-name: mycursorani;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mycursorani{
+    from{
+        border: none;
+    }
+
+    to{
+        border-right: 2px solid #747474;
+    }
+}
+
+.red{
+    color: red;
+}
+
+.skyblue{
+    color: skyblue;
+}
+
+.violet{
+    color: violet;
+}
+
+.yellow{
+    color: yellow;
+}
+
+em{
+    color: #fff;
+    font-style: unset;
+
+    animation-name: textlighting;
+    animation-duration: .8s;
+    animation-fill-mode: backwards;
+    /* animation-iteration-count: infinite; */
+}
+
+@keyframes textlighting{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0.5;
+        text-shadow: 0 0 20px #fff;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}

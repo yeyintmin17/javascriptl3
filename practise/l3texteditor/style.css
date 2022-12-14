@@ -1,0 +1,31 @@
+.my-container{
+    width: 50%;
+}
+
+@media (max-width: 768px){
+    .my-container{
+        width: 80%;
+    }
+}
+
+.btn, .my-color-picker{
+    font-weight: bold;
+    border-width: 2px;
+}
+
+.my-container.fullscreen .fa-expand{
+    display: none;
+}
+
+.my-container:not(.fullscreen) .fa-compress{
+    display: none;
+}
+
+.my-textarea{
+    min-height: 300px;
+    max-height: 500px;
+    border-radius: 5px;
+
+    overflow-y: auto;
+    resize: vertical;
+}

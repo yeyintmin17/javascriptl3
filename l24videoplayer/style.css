@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.container{
+    background-color: red;
+}
+
+.videoscreen{
+    width: 80%;
+    cursor: pointer;
+}
+
+.controls{
+    width: 80%;
+    background-color: #222;
+    color: #fff;
+    
+    padding: 12px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctrl-btn{
+    background-color: transparent;
+    color: #fff;
+
+    border: none;
+    outline: none;
+    margin: 0 5px;
+
+    cursor: pointer;
+}
+
+.progress{
+    width: 70%;
+}
+
+.fullscreen{
+    margin: 0 10px;
+}

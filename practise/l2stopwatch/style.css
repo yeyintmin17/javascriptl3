@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --c-r: rgba(252, 15, 67, 0.8);
+    --c-b: rgba(3, 161, 252, 0.8);
+    --c-g: rgba(46, 240, 62, 0.8);
+    --c-y: #fcb603;
+    --c-pur: rgba(180, 52, 235, 0.8);
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: rgb(25,25,25);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+    width: 8px;
+    background-color: var(--c-y);
+    border-radius: 80px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stop-watch-con{
+    width: 200px;
+    background-color: rgba(25,25,25,0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.time-con{
+    color: var(--c-y);
+}
+
+.time-con > span{
+    display: block;
+}
+
+.time-con .hms-con{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-con .ms{
+    font-size: 20px;
+    text-align: end;
+}
+
+.btn-con{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    grid-gap: 0.5rem;
+}
+
+.btn{
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: #fff;
+
+    font-size: 15px;
+    text-align: center;
+    line-height: 35px;
+
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    animation: stop-watch-btn-ani 0.25s linear;
+}
+
+@keyframes stop-watch-btn-ani{
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.btn-play{
+    background-color: var(--c-b);
+}
+
+.btn-pause{
+    background-color: var(--c-r);
+}
+
+.btn-reset{
+    background-color: var(--c-pur);
+}
+
+.btn-note{
+    background-color: var(--c-g);
+}
+
+.btn-pause, .btn-reset, .btn-note{
+    display: none;
+}
+
+.stop-watch-note-con{
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    overflow-y: scroll;
+}
+
+.list-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-group-item{
+    background-color: rgba(25,25,25,0.8);
+    color: var(--c-y);
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.list-group-item:last-child{
+    margin-bottom: 0;
+}
+
+.list-group-item .note-num{
+    background-color: #000;
+    color: #ebe134;
+    font-size: 13px;
+
+    padding: 5px;
+    border-radius: 50%;
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+    transform: translate(-50%,-50%);
+}
+
+.list-group-item .note-time{
+    margin-right: 0.5rem;
+}
+
+.list-group-item i{
+    background-color: #000;
+    color: var(--c-r);
+
+    padding: 5px;
+    border-radius: 25%;
+
+    cursor: pointer;
+    user-select: none;
+}

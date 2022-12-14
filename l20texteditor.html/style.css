@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4{
+    color: steelblue;
+    text-align: center;
+}
+
+button{
+    margin: 20px 10px;
+}
+
+button:hover{
+    background-color: steelblue !important;
+}
+
+textarea{
+    padding: 10px;
+    border-color: steelblue;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.divarea{
+    width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+    border: 1px solid steelblue;
+    padding: 10px;
+    text-align: justify;
+
+    resize: both;
+
+    overflow-y: scroll;
+}
+
+.divarea:focus{
+    outline: none;
+}

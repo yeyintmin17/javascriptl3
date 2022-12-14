@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L24 multi video player</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="./style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Video Player</h1>
+
+            <video src="./source/samplevideo1.mp4" id="videoscreen" class="videoscreen"></video>
+
+            <div class="controls">
+                <button id="prev" class="ctrl-btn">
+                    <i class="fas fa-backward"></i>
+                </button>
+
+                <button id="play" class="ctrl-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+
+                <button id="next" class="ctrl-btn">
+                    <i class="fas fa-forward"></i>
+                </button>
+
+                <button id="stop" class="ctrl-btn">
+                    <i class="fas fa-stop"></i>
+                </button>
+
+                <input type="range" name="progress" id="progress" class="progress" min="0" max="100" value="0"/>
+
+                <span id="fullscreen" class="fullscreen">
+                    <i class="fas fa-expand"></i>
+                </span>
+
+                <span id="displaytime" class="displaytime">00:00</span>
+            </div>
+        </div>
+
+        <script src="./app.js" type="text/javascript"></script>
+    </body>
+</html>

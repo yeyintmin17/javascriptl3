@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L19 Stop Watch</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="./style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <h2><i class="fas fa-stopwatch"></i> Stop Watch</h2>
+            <button type="button" class="btn mode-btn"> <i class="fas fa-tools"></i> </button>
+
+            <div class="display">00 : 00 : 00 : 000</div>
+            <div class="display">
+                <span id="dlpsecond">00</span>:<span id="dlpmillisec">00</span>
+            </div>
+
+            <div class="control">
+                <button type="button" class="btn start"><i class="fas fa-play"></i> Start</button>
+                <button type="button" class="btn pause"><i class="fas fa-pause"></i> Stop</button>
+                <button type="button" class="btn reset"><i class="fas fa-sync"></i> Reset</button>
+            </div>
+        </div>
+
+        <script src="./app.js" type="text/javascript"></script>
+    </body>
+</html>

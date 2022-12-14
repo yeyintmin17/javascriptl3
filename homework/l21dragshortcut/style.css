@@ -1,0 +1,72 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-color: #222;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.moves{
+    font-weight: bold;
+
+    cursor: move;
+    user-select: none;
+    
+    position: fixed;
+}
+
+.move-block{
+    background-color: orange;
+    color: #222;
+    padding: 0.5rem 1rem;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.move-icon-con{
+    visibility: hidden;
+}
+
+.move-icon-con.show{
+    visibility: visible;
+}
+
+.move-icon{
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: orange;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(-100%);
+    transition: transform 0.25s linear;
+}
+
+.move-icon-con.show .move-icon{
+    transform: translateX(0%);
+}
+
+.move-icon.icon-md{
+    width: 60px;
+    height: 60px;
+}
+
+.move-icon.icon-lg{
+    width: 80px;
+    height: 80px;
+}

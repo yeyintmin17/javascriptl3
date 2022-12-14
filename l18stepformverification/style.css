@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    background-color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 600px;
+    background-color: #fff;
+    box-shadow: 0 10px 5px rgba(0,0,0,0.5);
+    display: flex;
+}
+
+.dotbox{
+    width: 10%;
+}
+
+.dot{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    opacity: .5;
+    margin: 10px auto;
+}
+
+.dot.active{
+    opacity: 1;
+}
+
+.dot.done{
+    background-color: green;
+}
+
+#form{
+    width: 90%;
+    border-left: 2px solid #eee;
+    padding: 50px;
+}
+
+h1{
+    text-align: center;
+}
+
+.page{
+    display: none;
+}
+
+input{
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+input:focus{
+    outline: none;
+}
+
+input.invalid{
+    border: 1px dotted red;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: end;
+}
+
+.btn{
+    background-color: steelblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#prevbtn{
+    background-color: #bbb;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+#result-container{
+    width: 90%;
+    display: none;
+}
+
+#result-container ul li{
+    list-style-type: none;
+    padding: 3px;
+}
+
+.submit-btn{
+    width: 100%;
+    background-color: steelblue;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    cursor: pointer;
+}

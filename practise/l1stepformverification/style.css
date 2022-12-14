@@ -1,0 +1,281 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-color: #222;
+
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width: 50%;
+    background-color: #333;
+    color: #fff;
+
+    padding: 1rem;
+    border-radius: 1rem 1rem 1rem 25%;
+
+    display: grid;
+    grid-template-columns: 47px calc(100% - 47px);
+
+    position: relative;
+}
+
+.container::before{
+    content: '';
+    width: 50%;
+    height: 50%;
+    background-color: cornflowerblue;
+    border-radius: 50%;
+
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+    z-index: -1;
+}
+
+.dot-con{
+    margin-right: 1rem;
+}
+
+.dot-con .dot{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(25,25,25);
+    
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+
+    opacity: 0.5;
+}
+
+.dot-con .dot:last-child{
+    margin-bottom: 0;
+}
+
+.dot-con .dot.actived{
+    opacity: 1;
+}
+
+.dot-con .dot.finished{
+    background-color: cyan;
+}
+
+#reg-form h1,
+#result-container h1{
+    text-align: center;
+
+    color: transparent;
+    -webkit-text-stroke: 1px cornflowerblue;
+
+    font-weight: 0;
+    font-style: italic;
+
+    margin-bottom: 1.5rem;
+}
+
+/* .page{
+    display: none;
+} */
+
+.form-label{
+    color: cornflowerblue;
+    font-size: 18px;
+    display: block;
+    cursor: pointer;
+}
+
+.form-group{
+    border: 2px solid rgb(25,25,25);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-group.focused{
+    border-color: cornflowerblue;
+    transform: scale(1.05);
+    transition: all 0.15s linear 0.45s;
+}
+
+.form-group.invalid{
+    border-color: crimson;
+}
+
+.form-group .ani-light{
+    position: absolute;
+}
+
+.form-group .ani-light:nth-of-type(odd){
+    width: 100%;
+    height: 3px;
+}
+
+.form-group .ani-light:nth-of-type(even){
+    width: 3px;
+    height: 100%;
+}
+
+.form-group .ani-light:nth-of-type(1){
+    background-image: linear-gradient(to right, transparent 25%, cornflowerblue);
+    top: 0;
+    left: -100%;
+}
+
+.form-group .ani-light:nth-of-type(2){
+    background-image: linear-gradient(to bottom, transparent 25%, cornflowerblue);
+    right: 0;
+    top: -100%;
+}
+
+.form-group .ani-light:nth-of-type(3){
+    background-image: linear-gradient(to left, transparent 25%, cornflowerblue);
+    bottom: 0;
+    left: 100%;
+}
+
+.form-group .ani-light:nth-of-type(4){
+    background-image: linear-gradient(to top, transparent 25%, cornflowerblue);
+    left: 0;
+    top: 100%;
+}
+
+.form-group.focused .ani-light{
+    transition: all 0.15s linear;
+}
+
+.form-group.focused .ani-light:nth-of-type(1){
+    left: 100%;
+    transition-delay: 0s;
+}
+
+.form-group.focused .ani-light:nth-of-type(2){
+    top: 100%;
+    transition-delay: 0.15s;
+}
+
+.form-group.focused .ani-light:nth-of-type(3){
+    left: -100%;
+    transition-delay: 0.3s;
+}
+
+.form-group.focused .ani-light:nth-of-type(4){
+    top: -100%;
+    transition-delay: 0.45s;
+}
+
+.form-control{
+    width: 100%;
+    background-color: rgb(25,25,25);
+    color: cornflowerblue;
+
+    font-size: 20px;
+
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+}
+
+.list-group-item{
+    color: cornflowerblue;
+    font-size: 20px;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.list-group-item:last-child{
+    margin-bottom: 0;
+}
+
+.btn-group{
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+.btn{
+    background-color: cornflowerblue;
+    color: #fff;
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px 5px 5px 25%;
+    outline: none;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:active{
+    filter: brightness(0.5);
+}
+
+.stroke-success{
+    -webkit-text-stroke-color: cyan;
+}
+
+#result-container{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 80%;
+        padding: 0.5rem;
+        border-radius: 0.5rem 0.5rem 0.5rem 25%;
+        grid-template-columns: 26px calc(100% - 26px);
+    }
+    
+    .dot-con{
+        margin-right: 0.5rem;
+    }
+    
+    .dot-con .dot{
+        width: 10px;
+        height: 10px;
+    }
+    
+    #reg-form h1,
+    #result-container h1{
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+    
+    .form-label{
+        font-size: 15px;
+    }
+    
+    .form-group{
+        margin-top: 0.5rem;
+    }
+    
+    .form-control{
+        font-size: 15px;
+        padding: 5px;
+    }
+    
+    .list-group-item{
+        font-size: 18px;
+    }
+    
+    .btn-group{
+        margin-top: 0.5rem;
+        grid-gap: 0.5rem;
+    }
+
+    .btn{
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}

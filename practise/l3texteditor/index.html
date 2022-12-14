@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L3 Text Editor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- fontawesome css1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- bootstrap css1 js1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- own css1 js1 -->
+        <link href="./style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body class="vh-100 d-flex justify-content-center align-items-center">
+        <div class="my-container">
+            <div class="mb-3 d-flex align-items-center flex-wrap" style="grid-gap: 10px;">
+                <input type="color" name="background-color-picker" class="my-color-picker" title="Background Color" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="backColor"/>
+
+                <input type="color" name="text-color-picker" class="my-color-picker" title="Text Color" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="foreColor"/>
+
+                <select name="fontfamily" id="fontfamily" class="btn btn-outline-dark btn-sm rounded-0" title="Font Type" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="fontName">
+                    <option value="arial">Arial</option>
+                    <option value="century">Century</option>
+                    <option value="sans-serif">Sans Serif</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Bold Text" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="bold">Bold</button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Style Italic" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="italic">Italic</button>
+
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 dropdown-toggle" data-bs-toggle="dropdown">Text Align</a>
+
+                    <ol class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Align Left" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="justifyLeft">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Align Center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="justifyCenter">
+                                <i class="fas fa-align-center"></i>
+                            </button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Align Right" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="justifyRight">
+                                <i class="fas fa-align-right"></i>
+                            </button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Align Justify" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="justifyFull">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 dropdown-toggle" data-bs-toggle="dropdown">Text Decoration</a>
+
+                    <ol class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Underline" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="underline">Underline</button>
+                        </li>
+
+                        <!-- <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Overline" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="overline">Overline</button>
+                        </li> -->
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Line Through" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="strikeThrough">Line Through</button>
+                        </li>
+                    </ol>
+                </div>         
+
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 dropdown-toggle" data-bs-toggle="dropdown">Text Transform</a>
+
+                    <ol class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Transform Uppercase" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="text-uppercase">Uppercase</button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Transform Lowercase" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="text-lowercase">Lowercase</button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Text Trasnform Capitalize" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="text-capitalize">Capitalize</button>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 dropdown-toggle" data-bs-toggle="dropdown">List</a>
+
+                    <ol class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Order List" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="insertOrderedList">
+                                <i class="fas fa-list-ol"></i>
+                            </button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Unorder List" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="insertUnorderedList">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="btn btn-outline-dark btn-sm rounded-0 dropdown-toggle" data-bs-toggle="dropdown">Link</a>
+
+                    <ol class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Create Link" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="createLink">
+                                <i class="fas fa-link"></i>
+                            </button>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <button class="btn btn-outline-dark btn-sm rounded-0" title="Unlink" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover" data-my-command="unlink">
+                                <i class="fas fa-unlink"></i>
+                            </button>
+                        </li>
+                    </ol>
+                </div>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Insert Image" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="insertImage">
+                    <i class="fas fa-image"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Superscript" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="superscript">
+                    <i class="fas fa-superscript"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Subscript" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="subscript">
+                    <i class="fas fa-subscript"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Insert Ruler" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="insertHorizontalRule">
+                    <i class="fas fa-ruler"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Redo" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="redo">
+                    <i class="fas fa-redo"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Undo" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="undo">
+                    <i class="fas fa-undo"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Select All" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="selectAll">
+                    <i class="fas fa-check"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Copy" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="copy">
+                    <i class="fas fa-copy"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Cut" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="cut">
+                    <i class="fas fa-cut"></i>
+                </button>
+
+                <!-- <button class="btn btn-outline-dark btn-sm rounded-0" title="Paste" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="paste">
+                    <i class="fas fa-paste"></i>
+                </button> -->
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="backspace" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="delete">
+                    <i class="fas fa-backspace"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Forward Delete" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="forwardDelete">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Clear All" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="clear">
+                    Clear
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0" title="Remove Format" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" data-my-command="removeFormat">
+                    Remove Format
+                </button>
+
+                <button class="btn btn-outline-dark btn-sm rounded-0 my-fullscreen-btn" title="Full Screen" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover">
+                    <i class="fas fa-expand"></i>
+                    <i class="fas fa-compress"></i>
+                </button>
+            </div>
+
+            <div class="bg-dark text-light p-3 my-textarea"></div>
+        </div>
+
+        <!-- bootstrap css1 js1 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <!-- own css1 js1 -->
+        <script src="./script.js" type="text/javascript"></script>
+    </body>
+</html>
