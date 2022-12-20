@@ -11,7 +11,12 @@ body{
 }
 
 .container{
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: red; */
 }
 
 .videoscreen{
@@ -42,10 +47,22 @@ body{
     cursor: pointer;
 }
 
+.ctrl-btn .fa-play{
+    color: steelblue;
+}
+
+.ctrl-btn .fa-stop{
+    color: tomato;
+}
+
 .progress{
     width: 70%;
 }
 
 .fullscreen{
     margin: 0 10px;
+}
+
+.progress, .fullscreen{
+    cursor: pointer;
 }
