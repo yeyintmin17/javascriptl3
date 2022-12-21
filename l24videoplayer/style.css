@@ -59,10 +59,14 @@ body{
     width: 70%;
 }
 
-.fullscreen{
-    margin: 0 10px;
+.clsfullscreen{
+    display: none;
 }
 
 .progress, .fullscreen{
     cursor: pointer;
+}
+
+.displaytime{
+    margin-left: 10px;
 }
