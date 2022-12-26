@@ -77,14 +77,31 @@ function previousvdo(){
     // playvdo();
 }
 
-function updateprogress(){
+function updateprogress(e){
+    // Method 1
     // console.log("hi");
     // currentTime & duration came from video api
     // console.log(getvideoscreen.currentTime, getvideoscreen.duration);
-
     // console.log((getvideoscreen.currentTime / getvideoscreen.duration) * 100);
 
-    progress.value = (getvideoscreen.currentTime / getvideoscreen.duration) * 100;
+    // Method 2
+    // const currentTime =  e.target.currentTime;
+    // const duration = e.target.duration;
+    // console.log(e.target, e.currentTarget, e.srcElement, this)
+
+    // Method 3
+    // const {currentTime} = e.target;
+    // const {duration} = e.target;
+
+    const {currentTime, duration} = e.target;
+    // console.log(currentTime, duration);
+
+    if(getvideoscreen.currentTime === 0){
+        progress.value = 0;
+    }else{
+        progress.value = (currentTime / duration) * 100;
+    }
+    // console.log(progress.value, getvideoscreen.currentTime);
 
     let getmins = Math.floor(getvideoscreen.currentTime / 60);
     // console.log(getmins);
