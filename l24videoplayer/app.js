@@ -77,6 +77,11 @@ function previousvdo(){
     // playvdo();
 }
 
+function stopvideo(){
+    getvideoscreen.currentTime = 0;
+    pausevdo();
+}
+
 function updateprogress(e){
     // Method 1
     // console.log("hi");
@@ -93,7 +98,11 @@ function updateprogress(e){
     // const {currentTime} = e.target;
     // const {duration} = e.target;
 
-    const {currentTime, duration} = e.target;
+    // const {currentTime, duration} = e.target;
+    // console.log(currentTime, duration);
+
+    // Method 4
+    const [currentTime, duration] = [e.target.currentTime, e.srcElement.duration];
     // console.log(currentTime, duration);
 
     if(getvideoscreen.currentTime === 0){
@@ -106,20 +115,26 @@ function updateprogress(e){
     let getmins = Math.floor(getvideoscreen.currentTime / 60);
     // console.log(getmins);
 
-    if(getmins < 10){
-        // getmins = '0' + getmins;
-        getmins = '0' + String(getmins);
-    }
+    // if(getmins < 10){
+    //     // getmins = '0' + getmins;
+    //     getmins = '0' + String(getmins);
+    // }
 
     let getsecs = Math.floor(getvideoscreen.currentTime % 60);
     // console.log(gesecs);
 
-    if(getsecs < 10){
-        // getsecs = '0' + getsecs;
-        getsecs = '0' + String(getsecs);
-    }
+    // if(getsecs < 10){
+    //     // getsecs = '0' + getsecs;
+    //     getsecs = '0' + String(getsecs);
+    // }
 
-    getdisplaytime.innerText = `${getmins} : ${getsecs}`;
+    // Method 2
+    // Noted: padStart(target length, pad string) must be staring data type
+    const minutevalue = getmins.toString().padStart(2, '0');
+    const secondvalue = getsecs.toString().padStart(2, '0');
+    // console.log(minutevalue, secondvalue)
+;
+    getdisplaytime.innerText = `${minutevalue} : ${secondvalue}`;
 }
 
 // const getdoce = document.documentElement;
@@ -165,6 +180,7 @@ getvideoscreen.addEventListener('timeupdate', updateprogress);
 playbtn.addEventListener('click', playpausevdo);
 nextbtn.addEventListener('click', nextvdo);
 prevbtn.addEventListener('click', previousvdo);
+stopbtn.addEventListener('click', stopvideo);
 
 progress.addEventListener('click', setprogress);
 
