@@ -7,10 +7,18 @@ const prevbtn = document.getElementById('prev');
 const nextbtn = document.getElementById('next');
 const stopbtn = document.getElementById('stop');
 
+/// FOR RANGE 
+// const progress = document.getElementById('progress');
+
+/// FOR PROGRESS CONTAINER 
+const getprogressctn = document.getElementById('progress-container');
 const progress = document.getElementById('progress');
+
 const getopenfullscreen = document.querySelector('.openfullscreen');
 const getclsfullscreen = document.querySelector('.clsfullscreen');
 const getdisplaytime = document.getElementById('displaytime');
+
+const gettitle = document.getElementById('title');
 
 // console.log(getvideoscreen, playbtn, prevbtn, nextbtn, stopbtn, progress);
 // console.log(getopenfullscreen, getclsfullscreen);
@@ -22,6 +30,7 @@ let curridx = 0;
 loadvideo(videos[curridx]);
 function loadvideo(vdo){
     getvideoscreen.src = `../../source/${vdo}.mp4`;
+    gettitle.innerText = vdo;
 }
 
 function playvdo(){
@@ -105,12 +114,21 @@ function updateprogress(e){
     const [currentTime, duration] = [e.target.currentTime, e.srcElement.duration];
     // console.log(currentTime, duration);
 
-    if(getvideoscreen.currentTime === 0){
-        progress.value = 0;
-    }else{
-        progress.value = (currentTime / duration) * 100;
-    }
+    /// FOR RANGE
+    // if(getvideoscreen.currentTime === 0){
+    //     progress.value = 0;
+    // }else{
+    //     progress.value = (currentTime / duration) * 100;
+    // }
     // console.log(progress.value, getvideoscreen.currentTime);
+
+    /// FOR PROGRESS CONTAINER 
+    if(getvideoscreen.currentTime === 0){
+        progress.style.width = "0%";
+    }else{
+        const progresspercent = (currentTime / duration) * 100;
+        progress.style.width = `${progresspercent}%`;
+    }
 
     let getmins = Math.floor(getvideoscreen.currentTime / 60);
     // console.log(getmins);
@@ -168,21 +186,35 @@ function closefullscreen(){
     getopenfullscreen.style.display = 'inline-block';
 }
 
-function setprogress(){
+function setprogress(e){
     // console.log('hay');
     // console.log((progress.value * getvideoscreen.duration) / 100);
 
-    getvideoscreen.currentTime = (progress.value * getvideoscreen.duration) / 100;
+    // getvideoscreen.currentTime = (progress.value * getvideoscreen.duration) / 100;
+
+    /// FOR PROGRESS CONTAINER
+    const getelewidth = this.clientWidth;
+    const getclickx = e.offsetX;
+    const duration = getvideoscreen.duration;
+    // console.log(getelewidth, getclickx, duration);
+
+    getvideoscreen.currentTime = (getclickx / getelewidth) * duration;
 }
 
 getvideoscreen.addEventListener('timeupdate', updateprogress);
+getvideoscreen.addEventListener('ended', nextvdo);
+getvideoscreen.addEventListener('click', playpausevdo);
 
 playbtn.addEventListener('click', playpausevdo);
 nextbtn.addEventListener('click', nextvdo);
 prevbtn.addEventListener('click', previousvdo);
 stopbtn.addEventListener('click', stopvideo);
 
-progress.addEventListener('click', setprogress);
+/// FOR RANGE
+// progress.addEventListener('click', setprogress);
+
+/// FOR PROGRESS CONTAINER
+getprogressctn.addEventListener('click', setprogress);
 
 getopenfullscreen.addEventListener('click', openfullscreen);
 getclsfullscreen.addEventListener('click', closefullscreen);
