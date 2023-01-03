@@ -6,7 +6,7 @@ const playbtn = document.getElementById('play'),
     nextbtn = document.getElementById('next'),
     stopbtn = document.getElementById('stop');
 
-const getprogressctn = document.getElementById('progress'),
+const getprogressctn = document.getElementById('progress-container'),
     progress = document.getElementById('progress');
 
 const getvolprogress = document.getElementById('volumeprogress');
@@ -88,6 +88,42 @@ function updateprogress(e){
         const progresspercent = (currentTime / duration) * 100;
         progress.style.width = `${progresspercent}%`;
     }
+
+    // let mins = Math.floor(getaudioscreen.currentTime / 60);
+    // let secs = Math.floor(getaudioscreen.currentTime % 60);
+
+    // const minuteval = mins.toString().padStart(2, '0');
+    // const secondval = secs.toString().padStart(2, '0');
+
+    // getdisplaytime.innerHTML = `${minuteval} : ${secondval}`;
+
+    const lefttime = duration - currentTime;
+    let mins = Math.floor(lefttime / 60);
+    let secs = Math.floor(lefttime % 60);
+
+    const minuteval = mins.toString().padStart(2, '0');
+    const secondval = secs.toString().padStart(2, '0');
+
+    getdisplaytime.innerHTML = `${minuteval} : ${secondval}`;
+}
+
+function setaudioprogress(e){
+    const width = this.clientWidth;
+    const clickx = e.offsetX;
+    const duration = getaudioscreen.duration;
+
+    // console.log(width, clickx, duration);
+
+    getaudioscreen.currentTime = (clickx / width) * duration;
+}
+
+function volumecontrol(e){
+    // volume came from audio / video api
+    getaudioscreen.volume = getvolprogress.value / 100;
+
+    // 1 is default (100%)
+    // 0.5 half volume (50%)
+    // 0 mute (0)
 }
 
 getaudioscreen.addEventListener('timeupdate', updateprogress);
@@ -98,3 +134,6 @@ playbtn.addEventListener('click', playpauseado);
 prevbtn.addEventListener('click', previousado);
 nextbtn.addEventListener('click', nextado);
 stopbtn.addEventListener('click', stopado);
+
+getprogressctn.addEventListener('click', setaudioprogress);
+getvolprogress.addEventListener('click', volumecontrol);

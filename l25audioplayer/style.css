@@ -51,7 +51,7 @@ body{
 }
 
 .progress-container{
-    width: 70%;
+    width: 50%;
     height: 4px;
     background-color: #fff;
     border-radius: 5px;
@@ -61,7 +61,7 @@ body{
 }
 
 .progress{
-    width: 70%;
+    width: 00%;
     height: 100%;
     background-color: steelblue;
 
@@ -69,6 +69,7 @@ body{
 }
 
 .volumeprogress{
+    width: 100px;
     margin: 0 10px;
 }
 
