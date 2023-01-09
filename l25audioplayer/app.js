@@ -21,7 +21,7 @@ const audios = ['sample1', 'sample2', 'sample3'];
 
 let curridx = 0;
 
-loadaudio(audios[curridx]);
+// loadaudio(audios[curridx]);
 function loadaudio(ado){
     getaudioscreen.src = `../../source/audio${ado}.mp3`;
 }
@@ -89,17 +89,16 @@ function updateprogress(e){
         progress.style.width = `${progresspercent}%`;
     }
 
+    // forward
     // let mins = Math.floor(getaudioscreen.currentTime / 60);
     // let secs = Math.floor(getaudioscreen.currentTime % 60);
 
-    // const minuteval = mins.toString().padStart(2, '0');
-    // const secondval = secs.toString().padStart(2, '0');
+    // backward
+    let mins = Math.floor((duration - currentTime) / 60);
+    let secs = Math.floor((duration - currentTime) % 60);
 
-    // getdisplaytime.innerHTML = `${minuteval} : ${secondval}`;
-
-    const lefttime = duration - currentTime;
-    let mins = Math.floor(lefttime / 60);
-    let secs = Math.floor(lefttime % 60);
+    // console.log(duration, currentTime);
+    // console.log(mins, secs);
 
     const minuteval = mins.toString().padStart(2, '0');
     const secondval = secs.toString().padStart(2, '0');
