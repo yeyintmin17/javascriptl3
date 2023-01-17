@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>L26 Number Guess With Voice Command</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="./style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -15,11 +16,15 @@
 
             <input type="submit" id="btn" class="btn"/>
 
-            <span class="message1">Message 1</span>
-            <span class="message2">Message 2</span>
+            <span class="message1"></span>
+            <span class="message2"></span>
         </div>
 
-        <div class="voice-cotnainer">
+        <button type="button" id="mic-btn" class="mic-btn">
+            <i class="fas fa-microphone"></i> Use Microphone
+        </button>
+
+        <div id="voice-container">
             <span class="voicemessage">Did you say !!!</span>
         </div>
         
