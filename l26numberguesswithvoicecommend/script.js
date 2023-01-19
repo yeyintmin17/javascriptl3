@@ -1,10 +1,9 @@
 // Get UI
 
-const getgamecnt = document.getElementById('game-container');
-
 const minnum = document.querySelector('.minnumber'),
     maxnum = document.querySelector('.maxnumber');
 
+const getgamecnt = document.getElementById('game-container');
 const getinput = document.querySelector('#guessnumber');
 const getbtn = document.querySelector('#btn');
 
@@ -14,17 +13,17 @@ const message2 = document.querySelector('.message2');
 const getmicbtn = document.getElementById('mic-btn');
 const getvoccnt = document.getElementById('voice-container')
 
-let min = 1, max = 10, gameleft = 3, winningnum = 5;
+let min = 10, max = 100, gameleft = 3, winningnum = randomnum(min, max);
 
 minnum.innerText = min;
 maxnum.textContent = max;
 
 function randomnum(min, max){
     // console.log(min, max);;
-    let getrdm = Math.floor(Math.random() * (max - min) + 1);
+    let getrdm = Math.floor(Math.random() * (max - min) + 10);
     return getrdm;
 }
-// console.log(winningnum);
+console.log(winningnum);
 // console.log(Math.floor(Math.random() * (max - min) + 1));
 // console.log(Math.floor(Math.random() * (max + 1)));
 
@@ -75,13 +74,19 @@ getbtn.addEventListener('click', function(){
             getinput.value = "";
 
             setmessage1(`${guess} is not correct, ${gameleft} guess left`, 'blue');
+
+            if(guess > winningnum){
+                getvoccnt.innerHTML += "<div>You should go down a bit.</div>";
+            }else if(guess < winningnum){
+                getvoccnt.innerHTML += "<div>You should go up a bit.</div>";
+            }
         }
     }
 });
 
 getgamecnt.addEventListener('mousedown', function(e){
-    console.log(e.target);
-
+    // console.log(e.target);
+  
     if(e.target.classList.contains('playagain')){
         window.location.reload();
     }
@@ -93,18 +98,20 @@ window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogn
 
 let getrec = new window.SpeechRecognition;
 // console.log(getrec);
-
+// getrec.continuous = true;
 getmicbtn.addEventListener("click", function(){
     // console.log('working');
 
     // Start Recognition, start() come from Recognition api
     getrec.start();
+    // const start = getrec.start();
+    // console.log('start ', start);
 
     getrec.addEventListener('result', (e) => talking(e));
 });
 
 function talking(ele){
-    // console.log(ele);
+    console.log(ele);
 
     const micresult = ele.results[0][0].transcript;
     // console.log(micresult);
@@ -121,7 +128,19 @@ function micmessage(msg){
 
 function getnumber(msg){
     const getnum = +msg;
+    // console.log(msg, getnum);
     // console.log(typeof getnum);
 
+    if(Number.isNaN(getnum)){
+        getvoccnt.innerHTML += "<div>This is not a valid number.</div>";
+        return false;
+    }
+
+    // console.log('hello');
     getinput.value = getnum;
+
+    // Stop Recognition, stop() come from Recognition api
+    getrec.stop();
+    // const stop = getrec.stop();
+    // console.log('stop ', stop);
 }
