@@ -28,18 +28,20 @@
 
             <div id="tran-container" class="tran-container">
                 <form id="form" action=""  method="">
-                    <button type="button" class="open-btn">Open</button>
+                    <button type="button" id="open-btn" class="open-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
     
                     <h3>New Tansition</h3>
     
                     <div class="form-group">
                         <label>Status</label>
     
-                        <input type="radio" name="status" id="statusinc" class="form-check-input"/>
-                        <label for="statusinc">Income</label>
+                        <input type="radio" name="transtatus" id="transtatusdeb" class="form-check-input"/>
+                        <label for="transtatusdeb">Income</label>
     
-                        <input type="radio" name="status" id="statusexp" class="form-check-input"/>
-                        <label for="statusexp">Expense</label>
+                        <input type="radio" name="transtatus" id="transtatuscrd" class="form-check-input"/>
+                        <label for="transtatuscrd">Expense</label>
                     </div>
     
                     <div class="form-group">
@@ -60,15 +62,30 @@
                     <button type="submit" id="btn" class="btn">Submit</button>
                 </form>
 
-                <div class="history-box">
+                <div class="history-box show">
                     <h3>History</h3>
 
                     <div class="history-list">
                         <ul id="list-group" class="list-group">
-                            <li class="list-group-item">
-                                Petty Cash <span>+500</span> <span>23/January/2023</span>
-                                <button type="button" calss="delete-btn">x</button>
+                            <!-- <li class="list-group-item inc">
+                                Cash <span>+1000</span> <span>2023-01-25</span>
+                                <button type="button" class="delete-btn">&times;</button>
                             </li>
+
+                            <li class="list-group-item dec">
+                                Pen <span>-500</span> <span>2023-01-25</span>
+                                <button type="button" class="delete-btn">&times;</button>
+                            </li>
+
+                            <li class="list-group-item dec">
+                                Book <span>-700</span> <span>2023-01-25</span>
+                                <button type="button" class="delete-btn">&times;</button>
+                            </li>
+
+                            <li class="list-group-item dec">
+                                Water <span>-300</span> <span>2023-01-25</span>
+                                <button type="button" class="delete-btn">&times;</button>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
