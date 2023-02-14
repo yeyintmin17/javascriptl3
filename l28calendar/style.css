@@ -29,11 +29,17 @@ body{
 
     cursor: pointer;
 
+    float: left;
+
     transition: background-color 0.3s;
 }
 
 .btn:hover{
     background-color: darkblue;
+}
+
+.clear{
+    clear: both;
 }
 
 .month-btn, .year-btn{
@@ -51,11 +57,13 @@ body{
     --webkit-border-bottom-left-radius: 5px;
     --webkit-border-bottom-right-radius: 5px;
 
+    display: none;
     overflow: hidden;
 
     position: absolute;
     left: 0;
     /* top: 25px; */
+    z-index: 1;
 }
 
 .dropdown .dropdown-item{
@@ -81,10 +89,34 @@ body{
     border-radius: 5px;
 }
 
-.caldays .day{
-    width: 30px;
-    /* padding: 10px 20px; */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.caldates .days .day{
+    width: 10%;
+    font-size: 18px;
     text-align: center;
+
+    padding: 3px;
+    border: 1px solid steelblue;
+    border-radius: 10px;
+    margin: 3px;
+    
+    float: left;
+}
+
+.caldates .days .day.blank{
+    background-color: #fff;
+    border: none;
+}
+
+.caldates .days .day.selected{
+    background-color: green;
+    color: #fff;
+
+    opacity: 0.5;
+    cursor: pointer;
+
+    transition: opacity 0.5s;
+}
+
+.caldates .days .day.selected:hover{
+    opacity: 1;
 }
