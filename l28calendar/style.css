@@ -34,6 +34,10 @@ body{
     transition: background-color 0.3s;
 }
 
+.year-btn{
+    float: right;
+}
+
 .btn:hover{
     background-color: darkblue;
 }
@@ -66,6 +70,10 @@ body{
     z-index: 1;
 }
 
+.dropdown.show{
+    display: block;
+}
+
 .dropdown .dropdown-item{
     padding: 5px 0;
     opacity: 0.6;
@@ -90,7 +98,7 @@ body{
 }
 
 .caldates .days .day{
-    width: 10%;
+    width: 13%;
     font-size: 18px;
     text-align: center;
 
