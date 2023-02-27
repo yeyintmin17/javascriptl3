@@ -27,10 +27,8 @@ body{
     padding: 5px 10px;
     border-radius: 5px;
 
-    cursor: pointer;
-
     float: left;
-
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
@@ -78,7 +76,6 @@ body{
     padding: 5px 0;
     opacity: 0.6;
     cursor: pointer;
-
     transition: all 0.2s;
 }
 

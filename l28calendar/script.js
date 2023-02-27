@@ -39,17 +39,35 @@ function initmonths(){
         newdiv.classList.add("dropdown-item");
         newdiv.textContent = months[x];
 
-        newdiv.onclick = (
-            function(){
-                // console.log("hay");
+        // newdiv.addEventListener('click', function(){
+        //     // console.log(this);
+        //     // console.log(this.textContent);
 
-                return function(){
-                    initdays();
-                }
-            }
-        )();
+        //     console.log(x); // 12
+        // });
+
+        // newdiv.onclick = (function(){
+        //     console.log(x);
+        // })();
+
+        newdiv.onclick = selectmonth(x);
        
         getuimonths.appendChild(newdiv);
+    }
+}
+
+function selectmonth(num){
+    // console.log(num);
+
+    var allidx = num; // 0 to 11
+    // console.log(allidx);
+
+    return function(){
+        month = allidx;
+        // console.log(month);
+
+        getcurmonth.textContent = months[month];
+        initdays();
     }
 }
 
@@ -60,7 +78,22 @@ function inityears(){
         var newdiv = document.createElement("div");
         newdiv.className = "dropdown-item";
         newdiv.innerText = x;
-       
+
+        newdiv.onclick = (function(){
+            // console.log(x);
+
+            var allidx = x;
+            // console.log(allidx) // 2020 to 2030
+
+            return function(){
+                year = allidx;
+                // console.log(year);
+
+                getcuryear.innerText = year;
+                initdays();
+            }
+        })();
+
         getuiyears.appendChild(newdiv);
     }
 }
@@ -71,12 +104,12 @@ function initdays(){
     var tmpdays = new Date(year, month, 0);
     // console.log(tmpdays); // Tue Jan 31 2023 00:00:00 GMT+0630 (Myanmar Time)
 
-    var getalldays = alldays(year, month);
-    // console.log(getalldays);
-
-    var getweekday = tmpdays.getDay();
+    var getweekday = tmpdays.getDay(); 
     // console.log(getweekday); // 2 (means Tuesday)
 
+    var getalldays = alldays(year, month); // 28
+    // console.log(getalldays);
+    
     // getcarry space for previous days
     for(var i = 0; i <= getweekday; i++){
         // console.log(i);
