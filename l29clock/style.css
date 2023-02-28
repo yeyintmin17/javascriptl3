@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    background-color: #f4f4f4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    width: 300px;
+    height: 300px;
+}
+
+.clock-pannel{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border: 10px solid silver;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+}
+
+.clock-face{
+    color: #fff;
+}
+
+.clock-face-item{
+    position: absolute;
+    /* left: 140px; */
+    left: 50%;
+    top: 20px;
+
+    transform: translateX(-50%);
+    transform-origin: 50% 120px;
+}
+
+.num-12{ transform: translateX(-50%) rotate(0deg); }
+.num-1{ transform: translateX(-50%) rotate(30deg); }
+.num-2{ transform: translateX(-50%) rotate(60deg); }
+.num-3{ transform: translateX(-50%) rotate(90deg); }
+.num-4{ transform: translateX(-50%) rotate(120deg); }
+.num-5{ transform: translateX(-50%) rotate(150deg); }
+.num-6{ transform: translateX(-50%) rotate(180deg); }
+.num-7{ transform: translateX(-50%) rotate(210deg); }
+.num-8{ transform: translateX(-50%) rotate(240deg); }
+.num-9{ transform: translateX(-50%) rotate(270deg); }
+.num-10{ transform: translateX(-50%) rotate(300deg); }
+.num-11{ transform: translateX(-50%) rotate(330deg); }
+
+.clock-face-hand-item{
+    background-color: #fff;
+    position: absolute;
+    transform-origin: bottom;
+}
+
+.clock-face-hand-item.hour{
+    width: 4px;
+    height: 60px;
+    border-radius: 2px;
+  
+    left: 138px;
+    top: 80px;
+}
+
+.clock-face-hand-item.minute{
+    width: 4px;
+    height: 100px;
+    border-radius: 2px;
+
+    left: 138px;
+    top: 40px;
+}
+
+.clock-face-hand-item.second{
+    width: 2px;
+    height: 145px;
+    background-color: steelblue;
+    border-radius: 1px;
+
+    left: 139px;
+    top: 15px;
+
+    transform-origin: 50% 125px;
+}
