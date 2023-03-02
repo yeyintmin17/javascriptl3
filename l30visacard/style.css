@@ -1,0 +1,153 @@
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    background-color: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 420px;
+    height: auto;
+    background-image: linear-gradient(390deg, #000, #333);
+}
+
+.visacard{
+    width: 100%;
+    height: 260px;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    padding: 35px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(40px);
+}
+
+.logo{
+    width: 100px;
+    padding-bottom: 40px;
+    opacity: 0.9;
+}
+
+.form-group{
+    display: flex;
+    grid-gap: 5%;
+}
+
+label{
+    color: #fff;
+    font-size: 12px;
+
+    display: block;
+    padding-bottom: 2px;
+}
+
+.form-control{
+    width: 100%;
+    height: 25px;
+
+    background-color: transparent;
+    color: #fff;
+    font-size: 15px;
+
+    border: 0;
+}
+
+.form-control:focus{
+    outline: none;
+}
+
+.form-control::placeholder{
+    color: #bbb;
+}
+
+.underline{
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+
+    transition: left 0.3s;
+}
+
+.card-number{
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+input[id="card-digit"]{
+    height: 50px;
+    font-size: 30px;
+}
+
+/* input[id="card-digit"]:hover{
+    border-bottom: 2px solid #fff;
+} */
+
+/* .card-holder{
+    width: 130px;
+    padding: 0 80px 0 0;
+    margin-right: 40px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.card-holder input[id="card-name"]{
+    width: 100%;
+    height: 25px;
+    font-size: 16px;
+}
+
+.card-date{
+    width: 70px;
+    padding: 0 80px 0 0;
+    margin-right: 40px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.card-code{
+    width: 70px;
+    padding: 0 80px 0 0;
+    margin-right: 40px;
+
+    position: relative;
+    overflow: hidden;
+} */
+
+.form-group > *{
+    position: relative;
+    overflow: hidden;
+}
+
+.card-holder{
+    width: 40%;
+}
+
+.card-date, .card-code{
+    width: 25%;
+}
+
+.card-number input[id="card-digit"]:hover + .underline,
+.card-number input[id="card-digit"]:focus + .underline,
+
+.card-holder input[id="card-name"]:hover + .underline,
+.card-holder input[id="card-name"]:focus + .underline,
+
+.card-date input[id="card-exp"]:hover + .underline,
+.card-date input[id="card-exp"]:focus + .underline,
+
+.card-code input[id="card-cvc"]:hover + .underline,
+.card-code input[id="card-cvc"]:focus + .underline{
+    left: 0;
+}

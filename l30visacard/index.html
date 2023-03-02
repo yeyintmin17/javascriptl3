@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>l30 Visacard</title>
+        <link href="./style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div class="visacard">
+                <form action="" method="">
+                    <div>
+                        <img src="./visa_logo.png" alt="logo" class="logo"/>
+                    </div>
+
+                    <div class="card-number">
+                        <label for="card-digit">Card Number</label>
+                        <input type="text" name="card-digit" id="card-digit" class="form-control" placeholder="1234 1234 1234 1234" maxlength="18" required/>
+                        <span class="underline"></span>
+                    </div>
+
+                    <br/><br/>
+
+                    <div class="form-group">
+                        <div class="card-holder">
+                            <label for="card-name">Card Holder Name</label>
+                            <input type="text" name="card-name" id="card-name" class="form-control" placeholder="Your Full Name" required/>
+                            <span class="underline"></span>
+                        </div>
+
+                        <div class="card-date">
+                            <label for="card-exp">Exp. Date</label>
+                            <input type="text" name="card-exp" id="card-exp" class="form-control" placeholder="12/30" maxlength="5" required/>
+                            <span class="underline"></span>
+                        </div>
+
+                        <div class="card-code">
+                            <label for="card-cvc">CVC</label>
+                            <input type="text" name="card-cvc" id="card-cvc" class="form-control" placeholder="135" maxlength="3" required/>
+                            <span class="underline"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="./script.js" type="text/javascript"></script>
+    </body>
+</html>
